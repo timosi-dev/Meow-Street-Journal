@@ -75,6 +75,7 @@ p {
    background: var(--dark-color);
    color: #fff;
    padding: 0.5rem 1.5rem;
+   border-radius: 3rem;
 }
 
 .btn-light { background: var(--light-color); }
@@ -166,6 +167,7 @@ p {
    position: sticky;
    top: 0;
    z-index: 2;
+  // border-radius: 0 0 2rem 2rem;
 }
 
 #main-nav .container {
@@ -173,6 +175,7 @@ p {
    grid-template-columns: 6fr 3fr 2fr;
    padding: 0 1rem;
    align-items: center;
+   
 }
 
 #main-nav .logo {
@@ -230,6 +233,7 @@ p {
    background: #333;
    padding: 2rem;
    position: relative;
+   border-radius: 3rem;
 }
 
 #showcase:before {
@@ -241,6 +245,7 @@ p {
    width: 100%;
    height: 100%;
    opacity: 0.4;
+   border-radius: 4rem;
 }
 
 #showcase .showcase-container {
@@ -249,6 +254,7 @@ p {
    justify-content: center;
    align-items: center;
    height: 50vh;
+   
 }
 
 #showcase .showcase-content {
@@ -292,6 +298,10 @@ p {
 
 #article .meta .category {
    margin-top: 0.4rem;
+}
+
+article img {
+   border-radius: 2rem;
 }
 
 /* Footer */

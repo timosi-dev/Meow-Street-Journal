@@ -6,6 +6,7 @@
 #main-nav .container {
    grid-template-columns: 1fr;
    grid-gap: 1.2rem;
+   padding: 2rem 0;
 }
 
 #main-nav ul,
