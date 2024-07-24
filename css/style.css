@@ -7,9 +7,9 @@
 }
 
 .category {
-   --fashion-color: #F073D2;
-   --travel-color: #FFBFBE;
-   --lounging-color:#9EB0A2;
+   --fashion-color: #FFBFBE;
+   --travel-color: #7BCF8B;
+   --lounging-color:#9EB0A2;  
 }
 
 * {
@@ -188,12 +188,13 @@ p {
    align-items: center;
    gap: 1rem;
    letter-spacing: 0.12rem;
-   color: var(--primary-color);
+   color: var(--primary-color) !important; 
 }
 
-#logo h1 {
+#logo a {
   padding-top: 0.6rem;
   text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+  color: var(--primary-color) !important; 
 }
 
 #main-nav ul {
