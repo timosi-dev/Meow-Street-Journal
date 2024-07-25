@@ -161,6 +161,13 @@ p {
    grid-row: 1 /span 3;
 }
 
+/* About Us  */
+#about-us {
+   padding: 4rem;
+   font-size: 1.3rem;
+}
+
+
 /* Navigation */
 #main-nav {
    background: #fff;
@@ -321,12 +328,12 @@ article img {
 
 #main-footer .footer-container {
    display: grid;
-   grid-template-columns: repeat(4, 1fr);
+   grid-template-columns: repeat(3, 1fr);
    grid-gap: 1.5rem;
 }
 
 #main-footer .footer-container div:last-child {
-   grid-column: 1 /span 4;
+   grid-column: 1 /span 3;
    text-align: center;
    background: #444;
    padding: 0.5rem;
