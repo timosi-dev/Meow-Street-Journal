@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1"
+  },
+  "name": "meow-street-journal",
+  "version": "1.0.0",
+  "description": "cat news website",
+  "main": "index.js",
+  "proxy": "http://localhost:5000",
+  "devDependencies": {},
+  "scripts": {
+    "server": "json-server --watch db.json --port 5000"
+  },
+  "author": "Timo S.",
+  "license": "ISC"
+}

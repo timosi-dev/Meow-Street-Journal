@@ -10,6 +10,7 @@
    <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+   <script src="index.js" defer></script>
    <title>Meow Street Journal</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
                <div class="category category-lounging">Lounging</div>
                <h1>Fresh News</h1>
                <p>If you are looking to adopt a cat of your own, or just want to lighten up your mood with some funny cat videos, then pay a visit to the Instagram page dedicated to the three queens of Instagram Reels: Willa, Nala, and Bella</p>
-               <a href="article.html" class="btn btn-primary">Read More</a>
+               <a href="article.html?id=1" class="btn btn-primary">Read More</a>
             </div>
          </div>
       </div>
@@ -51,26 +52,26 @@
       <div class="container">
          <h2>Editor Picks</h2>
          <div class="articles-container">
-            <article class="card">
+            <article class="card clickedArticle" id="2">
                <a href="article.html"> 
-                  <img src="img/articles/Stephanie-Lyons-Keeley.jpg" alt="">
+                  <img src="img/articles/Stephanie-Lyons-Keeley.jpg" alt="" >
                </a>
                <div>
                   <div class="category category-fashion">fashion</div>
                   <h3>
-                     <a href="article.html">Stephanie Lyons-Keeley</a>
+                     <a href="article.html" >Stephanie Lyons-Keeley</a>
                   </h3>
                   <p>Stephanie is pawrent to 7 disabled cats and she's out on a mission - to prove that all cats deserve love. More than 4k people on Instagram seem to be supporting her agenda. They actively engage with her posts and have made her one of the most sought-after cat influencers on the platform.</p>
                </div>
             </article>
-            <article class="card bg-dark">             
+            <article class="card bg-dark clickedArticle" id="3">             
                <div class="category category-travel">travel</div>
                <h3>
-                  <a href="article.html">Louis The Kitten Prince</a>
+                  <a href="article.html" >Louis The Kitten Prince</a>
                </h3>
                <p>Step into the world of feline royalty with @louis_the_kitten_prince, where the enchanting Louis reigns supreme. His owner, Yi-Hsien Chiang, curates this regal cat's Instagram kingdom, and scrolling through Louis' page, you'll quickly see that this kitty thrives on pampering and adoration.</p>
             </article>
-            <article class="card">
+            <article class="card clickedArticle" id="4">
                <a href="article.html"> 
                   <img src="img/articles/atticashirley.png" alt=""> 
                </a>           
@@ -80,7 +81,7 @@
                </h3>
                <p>Meet Attica Shirley, the sassy tabby cat with a personality as big as her fluffy, oh-so-adorable appearance! This cat is not just your typical feline friend; she's a social media sensation in the making, determined to conquer your Instagram feed one charming pose at a time.</p>
             </article>
-            <article class="card">           
+            <article class="card clickedArticle" id="5">           
                <div class="category category-lounging">lounging</div>
                <h3>
                   <a href="article.html">Amanda Obrien</a>
@@ -90,7 +91,7 @@
                   <img src="img/articles/Amanda-Obrien.jpg" alt=""> 
                </a>
             </article>
-            <article class="card">
+            <article class="card clickedArticle" id="6">
                <a href="article.html"> 
                   <img src="img/articles/aries.jpg" alt="">  
                </a>           
@@ -100,14 +101,14 @@
                </h3>
                <p>Most pet cats are known to be homebodies with little to no interest in the outdoors, but not Aries. She has proven to be a rockstar and is famously known on Instagram as The Adventure Cat. You will see her do a variety of things including hiking and showing unique talents.</p>
             </article>
-            <article class="card bg-primary">             
+            <article class="card bg-primary clickedArticle" id="7">             
                <div class="category category-travel">travel</div>
                <h3>
                   <a href="article.html">Batman The Munchkin Cat</a>
                </h3>
                <p>If you search the web for top cat influencers, you will find that most have unique properties such as Batman The Munchkin Cat- the cat with short legs. What might sound like a shortcoming to some has proven to be Batman's main asset.</p>
             </article>
-            <article class="card">
+            <article class="card clickedArticle" id="8">
                <div>
                   <div class="category category-fashion">fashion</div>
                   <h3>
@@ -138,14 +139,14 @@
          <div>
             <h2>Join our Club</h2>
             <p>Get Fresh News on the fly</p>
-            <a href="#" class="btn btn-secondary">Join Now</a>
+            <a href="#" class="btn btn-secondary" disabled>Join Now</a>
          </div>
          <div>
             <h3>Email Newsletter</h3>
             <p>We wil keep you updated</p>
             <form >
                <input type="email" name="" id="" placeholder="Enter Email">
-               <input type="submit" value="Subscribe" class="btn btn-primary">
+               <input type="submit" value="Subscribe" class="btn btn-primary" disabled>
             </form>
          </div>
          <div>
