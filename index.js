@@ -162,3 +162,6 @@ document.addEventListener('DOMContentLoaded', init);
 
 //console.log(articlesObject[1])
 
+// "scripts": {
+//    "server": "json-server --watch db.json --port 5000"
+//  },
