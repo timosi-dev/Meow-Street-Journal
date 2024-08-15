@@ -4,10 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MediaQueryPlugin = require('media-query-plugin');
 
-
 module.exports = {
    mode:'development',
-   entry: './src/index.js',
+   entry: { 
+      index: './src/index.js'
+   },
    output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
@@ -49,6 +50,8 @@ module.exports = {
          title: 'Webpack App',
          filename: 'index.html',
          template: './src/index.html',
+         // inject: true,
+         // chunks: ['index']
       }),
       new MiniCssExtractPlugin(),
       new CopyPlugin({
@@ -63,6 +66,18 @@ module.exports = {
          queries: {
              'print, screen and (min-width: 768px)': 'desktop'
          }
-     })
+     }),
+    new HtmlWebpackPlugin({
+      template: './src/about.html',
+     // inject: true,
+      chunks: ['index'],
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/article.html',
+     // inject: true,
+      chunks: ['index'],
+      filename: 'article.html'
+    })
    ],
 }
