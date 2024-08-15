@@ -2,6 +2,9 @@ const article = document.querySelectorAll('.clickedArticle');
 const div = document.createElement('div');
 
 
+import './css/style.css';
+
+
 const articlesObject = [
    {
       "id": "1",
@@ -92,7 +95,7 @@ const articlesObject = [
       "img3" : "img/articles/photo15.png"
    }
 
-]
+];
 
 //display article details
 function displayArticle(data) {
@@ -121,7 +124,7 @@ function displayArticle(data) {
    const parentElement = document.querySelector('#article-container');
    parentElement.appendChild(div);
 
-}
+};
 
 
 //get an article
@@ -141,7 +144,7 @@ function clickArticle(e){
 
 article.forEach((art)=> {
    art.addEventListener('click', clickArticle);
-})
+});
 
 
 function init() {
@@ -150,12 +153,12 @@ function init() {
    if (page.includes('article')) {
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
-      const id = urlParams.get('id')
+      const id = urlParams.get('id');
       // getArticle(id);
       displayArticle(articlesObject[id-1]);
    }
 
-}
+};
    
 
 document.addEventListener('DOMContentLoaded', init);
