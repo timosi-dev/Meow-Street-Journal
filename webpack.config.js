@@ -26,6 +26,12 @@ module.exports = {
    module: {
       rules: [
          {
+            test: /\.html$/,
+            use: {
+              loader: "html-loader"
+            }
+         },
+         {
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader, 
                   'css-loader',
@@ -80,4 +86,23 @@ module.exports = {
       filename: 'article.html'
     })
    ],
+   // resolve: {
+   //    symlinks: false,
+   //    extensions:['.js','.jsx','.html','.css'],
+   //    fallback: { 
+   //          "url": false,
+   //          "path" : false,
+   //          "stream": false,
+   //          "buffer": false,
+   //          "util": false,
+   //          "querystring": false,
+   //          "http": false,
+   //          "crypto": false,
+   //          "zlib": false,
+   //          "buffer": false,
+   //          "fs" : false,
+   //          "net" : false,
+   //          "async_hooks": false
+   //       }
+   //     }
 }
