@@ -1,94 +1,75 @@
 const express = require('express');
 const router = express.Router();
+const Post = require('../models/post')
 
-const blogPosts = [
-   {
-      id: 1,
-      title: 'Going on a Vacation',
-      text: "We have the perfect platform to help you connect with the right influencers for your brand. Join our Club for free and start making connections today!",
-      tag: 'Fashion',
-      username: 'timo',
-      date: '2024-17-08'
-   },
-   {
-      id: 2,
-      title: 'Have a rest',
-      text: "We have the perfect platform to help you connect with the right influencers for your brand. Join our Club for free and start making connections today!",
-      tag: 'Lounging',
-      username: 'lilu',
-      date: '2024-17-08'
-   },
-   {
-      id: 3,
-      title: 'Platform Talk',
-      text: "We have the perfect platform to help you connect with the right influencers for your brand. Join our Club for free and start making connections today!",
-      tag: 'Travel',
-      username: 'alex',
-      date: '2024-17-08'
-   }
-]
 
 //get all posts
-router.get('/', (req, res) => {
-   res.json({success:true, data: blogPosts});
+router.get('/', async (req, res) => {
+   try {
+      const posts = await Post.find();
+      res.json({success:true, data: posts})
+   } catch(error) {
+      res.status(500).json({success:false, error: "Something went wrong"});
+   }
 });
 
 //get single post
-router.get('/:id', (req, res) => {
-   const post = blogPosts.find((post) => post.id === +req.params.id);
-
-   if(!post) {
-      return res.status(404)
-      .json({success:false, error:'Resource not found'});
+router.get('/:id', async (req, res) => {
+   try {
+      const post = await Post.findById(req.params.id);
+      res.json({success:true, data:post})
+   } catch (error) {
+      res.status(500).json({success:false, error: "Something went wrong"});
    }
-   res.json({success:true, data: post});
 });
 
 //add a post
-router.post('/', (req, res) => {
-   const post = {
-      id: blogPosts.length+1,
+router.post('/', async (req, res) => {
+   const post = new Post ({
       title: req.body.title,
       text: req.body.text,
       tag: req.body.tag,
-      username: req.body.username,
-      date: new Date().toISOString().slice(0,10)
-   };
+      username: req.body.username
+   });
 
-   console.log(post);
-   blogPosts.push(post);
-
-   res.json({success:true, data: post});
+   try {
+     const savedPost =  await post.save();
+     res.json({success:true, data: savedPost})
+   } catch (error) {
+      res.status(500).json({success:false, error: "Something went wrong"});
+   }
 });
 
 //update a post
-router.put('/:id', (req, res) => {
-   const post = blogPosts.find((post) => post.id === +req.params.id);
+router.put('/:id', async (req, res) => {
 
-   if(!post) {
-      return res.status(404)
-      .json({success:false, error:'Resource not found'});
+   try {
+      const updatedPost = await Post.findByIdAndUpdate(
+         req.params.id, {
+            $set: {
+               title: req.body.title,
+               text: req.body.text,
+               tag: req.body.tag
+            }
+         },
+         { new: true }
+      );
+      res.json({success:true, data: updatedPost});
+   } catch (error) {
+      res.status(500).json({success:false, error: "Something went wrong"});
    }
-
-   post.title = req.body.title || post.title;
-   post.text = req.body.text || post.text;
-   post.tag = req.body.tag || post.tag;
-
-   res.json({success:true, data: post});
 });
 
 //Delete post
-router.delete('/:id', (req, res) => {
-   const post = blogPosts.find((post) => post.id === +req.params.id);
-
-   if(!post) {
-      return res.status(404)
-      .json({success:false, error:'Resource not found'});
+router.delete('/:id', async (req, res) => {
+   try {
+      await Post.findByIdAndDelete(req.params.id);
+      res.json({success:true, data: {}});
+   } catch (error) {
+      res.status(500).json({success:false, error: "Something went wrong"});
    }
-   const index = blogPosts.indexOf(post);
-   blogPosts.splice(index, 1);
 
-   res.json({success:true, data: {}});
+   
 });
 
 module.exports = router;
