@@ -6,5 +6,5 @@
 
 to be implemented: 
 1. Add Categories pages
-2. optimize images
+2. MongoDB also for articles
 3. blog page and the ability to add, delete and modify posts and connections to MonggoDB Database.
