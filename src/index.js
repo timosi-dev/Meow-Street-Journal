@@ -2,6 +2,7 @@ const article = document.querySelectorAll('.clickedArticle');
 const div = document.createElement('div');
 const {articlesObject} = require('./articles.js');
 import './css/style.css';
+import './css/mobile.css';
 
 //display article details
 function displayArticle(data) {
