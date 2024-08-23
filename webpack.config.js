@@ -91,7 +91,7 @@ module.exports = {
       chunks: ['index'],
       filename: 'blog.html'
     })
-   ],
+   ]
    // resolve: {
    //    symlinks: false,
    //    extensions:['.js','.jsx','.html','.css'],

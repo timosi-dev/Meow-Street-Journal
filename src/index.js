@@ -5,6 +5,10 @@ const {articlesObject} = require('./articles.js');
 import './css/style.css';
 import './css/mobile.css';
 
+import Modal from './components/Modal.js';
+import PostForm from './components/postForm.js';
+import PostList from './components/postList.js';
+
 //display article details
 function displayArticle(data) {
    //const clickedArticle = document.querySelectorAll('.click');
@@ -65,6 +69,11 @@ function init() {
       navBtnIndex.classList.remove('current');
       navBtnAbout.classList.remove('current');
       navBtnBlog.classList.add('current');
+
+      new Modal();
+      const postForm = new PostForm();
+      postForm.render();
+      new PostList();
    }
 
  
@@ -75,6 +84,8 @@ function init() {
       // getArticle(id);
       displayArticle(articlesObject[id-1]);
    }
+
+
 
 };
    

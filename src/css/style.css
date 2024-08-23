@@ -458,3 +458,81 @@ article img {
    margin-left: -0.4rem;
 }
 
+
+//Form Modal
+
+
+#modal-btn {
+   border: none;
+   background: none;
+   color: green;
+   cursor: pointer;
+   position: absolute;
+   top: 10px;
+   left: 10px;
+ }
+ 
+ .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.5);
+ }
+ 
+ .modal-box {
+   margin: 10% auto;
+   width: 600px;
+   background: var(--dark-color);
+   color: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   animation-name: modalopen;
+   animation-duration: 0.5s;
+ }
+ 
+ @keyframes modalopen {
+   from {
+     opacity: 0;
+   }
+   to {
+     opacity: 1;
+   }
+ }
+ 
+ form input,
+ form textarea,
+ form select {
+   width: 95%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   margin: 10px 0;
+ }
+ 
+ form textarea {
+   height: 300px;
+ }
+ 
+ form label {
+   display: block;
+   font-size: 18px;
+   font-weight: 600;
+   margin: 5px 0;
+ }
+
+ .form-btn {
+   color: #fff;
+   border: none;
+   padding: 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: inherit;
+   margin-top: 1.5rem;
+   width: 100%;
+ }
