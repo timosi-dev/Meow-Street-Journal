@@ -36,7 +36,21 @@
 #blog {
    flex-direction: column-reverse;
    gap: 1rem; 
-   margin-top: -3rem;
+   margin-top: -1rem;
+}
+
+.addBlog {
+}
+
+.addbtn {
+   left: 20%;
+   margin-top: 1rem;
+}
+
+.modifybtn {
+   left: 60%;
+   top: 12rem;
+   margin-top: 1rem;
 }
 
  }

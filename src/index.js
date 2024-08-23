@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/css/all.css';
 const article = document.querySelectorAll('.clickedArticle');
 const div = document.createElement('div');
 const {articlesObject} = require('./articles.js');
@@ -46,6 +47,26 @@ article.forEach((art)=> {
 
 function init() {
    const page = window.location.pathname;
+   const navBtnIndex = document.getElementById('nav-index');
+   const navBtnAbout = document.getElementById('nav-about');
+   const navBtnBlog = document.getElementById('nav-blog');
+
+   if (page.includes('index')) {
+      navBtnIndex.classList.add('current');
+      navBtnAbout.classList.remove('current');
+      navBtnBlog.classList.remove('current');
+   }
+   if (page.includes('about')) {
+      navBtnIndex.classList.remove('current');
+      navBtnAbout.classList.add('current');
+      navBtnBlog.classList.remove('current');
+   }
+   if (page.includes('blog')) {
+      navBtnIndex.classList.remove('current');
+      navBtnAbout.classList.remove('current');
+      navBtnBlog.classList.add('current');
+   }
+
  
    if (page.includes('article')) {
       const queryString = window.location.search;
