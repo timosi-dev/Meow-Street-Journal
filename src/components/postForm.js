@@ -22,17 +22,17 @@ class PostForm {
       //save user to local storage
       localStorage.setItem('username', this._form.elements.username.value)
 
-      const idea = {
+      const post = {
          title: this._form.elements.title.value,
          text: this._form.elements.text.value,
          tag: this._form.elements.tag.value,
          username: this._form.elements.username.value,
       }
 
-      //Add idea to server
+      //Add post to server
       const newPost = await PostsApi.createPost(post);
 
-      //add idea to list
+      //add post to list
       this._postList.addPostToList(newPost.data.data);
 
       //clear fields
@@ -58,13 +58,13 @@ class PostForm {
             <input type="text" name="title" id="title" />
           </div>
           <div class="form-control">
-            <label for="idea-text">What's Your Post?</label>
-            <textarea name="text" id="idea-text"></textarea>
+            <label for="post-text">What's Your Post?</label>
+            <textarea name="text" id="post-text"></textarea>
           </div>
           <div class="form-control">
-            <label for="tag">Tag</label>
+            <label for="tag">Category</label>
             <select name="tag" id="tag" required>
-               <option value="" disabled selected>-- Please choose a tag --</option>
+               <option value="" disabled selected>-- Please choose a category --</option>
                <option value="nutrition">Nutrition</option>
                <option value="leisure">Leisure</option>
                <option value="grooming">Grooming</option>
@@ -74,7 +74,7 @@ class PostForm {
           </div>
           <button class="btn btn-primary form-btn" type="submit" id="submit">Submit</button>
         </form>
-      `
+      `;
 
       this._form = document.querySelector('#post-form');
       this.addEventListeners();
