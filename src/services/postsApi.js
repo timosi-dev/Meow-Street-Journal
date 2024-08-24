@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class PostsApi {
    constructor(){
-      this._apiUrl = 'http://localhost:5000/api/posts';
+      this._apiUrl = `${process.env.API_URL}/api/posts`;
    }
 
    getPosts(){
