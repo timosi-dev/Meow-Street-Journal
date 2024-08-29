@@ -10,6 +10,14 @@ class PostList{
    }
 
    addEventListeners(){
+      this._postListEl.addEventListener('click', (e)=> {
+         if(e.target.classList.contains('fa-trash-can')) {
+            e.stopImmediatePropagation();
+            const postId = e.target.parentElement.parentElement.parentElement.parentElement.dataset.id;
+            this.deletePost(postId);
+         }
+      });
+      
       this._modifyBtn.addEventListener('click', (e) => {
          e.stopImmediatePropagation();
          const allEditButtons = [...document.querySelectorAll('.btn-edit')];
@@ -27,13 +35,6 @@ class PostList{
          console.log('Not yet implemented');
       });
 
-      this._postListEl.addEventListener('click', (e)=> {
-         if(e.target.classList.contains('fa-trash-can')) {
-            e.stopImmediatePropagation();
-            const postId = e.target.parentElement.parentElement.parentElement.parentElement.dataset.id;
-            this.deletePost(postId);
-         }
-      });
    }
 
    async getPosts(){
