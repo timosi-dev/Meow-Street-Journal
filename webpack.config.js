@@ -3,6 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const MediaQueryPlugin = require('media-query-plugin');
+const Dotenv = require('dotenv-webpack');
+// const dotenv = require('dotenv').config({ path: __dirname + '/.env' })
+// const isDevelopment = process.env.NODE_ENV !== 'production'
+
 
 module.exports = {
    mode:'development',
@@ -52,6 +56,7 @@ module.exports = {
       ]
    },
    plugins: [
+      new Dotenv(),
       new HtmlWebpackPlugin ({
          title: 'Webpack App',
          filename: 'index.html',
@@ -91,7 +96,19 @@ module.exports = {
       chunks: ['index'],
       filename: 'blog.html'
     })
+   //  new DefinePlugin({
+   //    'process.env.PORT': JSON.stringify(process.env.PORT),
+   //    'process.env.MONGO_URI': JSON.stringify(process.env.MONGO_URI),
+   //    'process.env.API_URL': JSON.stringify(process.env.API_URL)
+   //  })
    ]
+   // plugins: [
+   //    new webpack.DefinePlugin({
+   //      'process.env': JSON.stringify(dotenv.parsed),
+   //      'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production'),
+   //    }),
+   //  ].filter(Boolean)
+
    // resolve: {
    //    symlinks: false,
    //    extensions:['.js','.jsx','.html','.css'],

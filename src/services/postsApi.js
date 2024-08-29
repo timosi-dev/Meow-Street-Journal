@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 class PostsApi {
    constructor(){
       this._apiUrl = `${process.env.API_URL}/api/posts`;
