@@ -4,11 +4,29 @@ class PostList{
    constructor() {
       this._postListEl = document.querySelector('#blogItems');
       this._modifyBtn = document.querySelector('#edit-posts');
+      this._editPost = document.querySelector('.btn-edit');
       this._posts = [];
       this.getPosts();
    }
 
    addEventListeners(){
+      this._modifyBtn.addEventListener('click', (e) => {
+         e.stopImmediatePropagation();
+         const allEditButtons = [...document.querySelectorAll('.btn-edit')];
+            allEditButtons.map((btn) => {
+         if (btn.style.display == 'none') {
+            btn.style.display = 'inline-block';
+         } else {
+            btn.style.display = 'none';
+         }
+         });
+      });
+
+      this._editPost.addEventListener('click', (e) => {
+         alert('functionality will be implemented soon');
+         console.log('Not yet implemented');
+      });
+
       this._postListEl.addEventListener('click', (e)=> {
          if(e.target.classList.contains('fa-trash-can')) {
             e.stopImmediatePropagation();
@@ -16,7 +34,6 @@ class PostList{
             this.deletePost(postId);
          }
       });
-      this._modifyBtn.addEventListener('click', this.displayEdit);
    }
 
    async getPosts(){
@@ -58,16 +75,11 @@ class PostList{
       return tagClass;
    }
 
-   displayEdit () {
-      const allEditButtons = [...document.querySelectorAll('.btn-edit')];
-      allEditButtons.map((btn) => {
-         if (btn.style.display == 'none') {
-            btn.style.display = 'inline-block';
-         } else {
-            btn.style.display = 'none';
-         }
-      });
-   }
+
+   editPost () {
+      alert('functionality will be implemented soon');
+      console.log('Not yet implemented');
+   };
 
    render() {
       this._postListEl.innerHTML = this._posts.toReversed().map((post) => {
