@@ -1,4 +1,4 @@
-//import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 const article = document.querySelectorAll('.clickedArticle');
 const div = document.createElement('div');
 const {articlesObject} = require('./articles.js');
