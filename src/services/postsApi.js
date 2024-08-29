@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class PostsApi {
    constructor(){
-      this._apiUrl = `${process.env.API_URL}/api/posts`;
+      this._apiUrl = `/api/posts`;
    }
 
    getPosts(){

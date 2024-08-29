@@ -9,7 +9,7 @@ const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
-   mode:'development',
+   mode:'production',
    entry: { 
       index: './src/index.js'
    },
@@ -26,6 +26,9 @@ module.exports = {
       hot: true,
       compress: true,
       historyApiFallback: true,
+      proxy: {
+         '/api' : 'http://localhost:5000',
+      },
    },
    module: {
       rules: [
@@ -96,36 +99,6 @@ module.exports = {
       chunks: ['index'],
       filename: 'blog.html'
     })
-   //  new DefinePlugin({
-   //    'process.env.PORT': JSON.stringify(process.env.PORT),
-   //    'process.env.MONGO_URI': JSON.stringify(process.env.MONGO_URI),
-   //    'process.env.API_URL': JSON.stringify(process.env.API_URL)
-   //  })
    ]
-   // plugins: [
-   //    new webpack.DefinePlugin({
-   //      'process.env': JSON.stringify(dotenv.parsed),
-   //      'process.env.NODE_ENV': JSON.stringify(isDevelopment ? 'development' : 'production'),
-   //    }),
-   //  ].filter(Boolean)
-
-   // resolve: {
-   //    symlinks: false,
-   //    extensions:['.js','.jsx','.html','.css'],
-   //    fallback: { 
-   //          "url": false,
-   //          "path" : false,
-   //          "stream": false,
-   //          "buffer": false,
-   //          "util": false,
-   //          "querystring": false,
-   //          "http": false,
-   //          "crypto": false,
-   //          "zlib": false,
-   //          "buffer": false,
-   //          "fs" : false,
-   //          "net" : false,
-   //          "async_hooks": false
-   //       }
-   //     }
+ 
 }
