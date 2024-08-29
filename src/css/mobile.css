@@ -42,12 +42,13 @@
 .addBlog {
 }
 
-.addbtn {
+
+#modal-btn {
    left: 20%;
    margin-top: 1rem;
 }
 
-.modifybtn {
+#edit-posts {
    left: 60%;
    top: 12rem;
    margin-top: 1rem;

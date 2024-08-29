@@ -453,27 +453,32 @@ article img {
 .addBlog {
    flex: 1;
    min-width: 10rem;
-   /* align-items: center; */
    margin-top: 5rem;
    width: 100%;
-   /* display: flex; */
-   /* gap: 1rem; */
-   /* flex-direction: column; */
+}
+
+#modal-btn, #edit-posts {
+   position: fixed;
+   top: 12rem;
+   width: 10rem;
+   border: none;
+    background: none; 
+}
+
+#edit-posts {
+   top: 15.5rem;
+   /* margin-left: -0.4rem; */
 }
 
 .addbtn, .modifybtn {
-   position: fixed;
-   top: 12rem;
+   /* position: fixed;
+   top: 12rem; */
    width: 10rem;
    text-align: center;
    color: #fff;
    padding: 0.8rem 1.5rem;
 }
 
-.modifybtn {
-   top: 15.5rem;
-   margin-left: -0.4rem;
-}
 
 .btn-edit, .btn-delete {
    border: none;
@@ -501,13 +506,13 @@ article img {
 
 
 #modal-btn {
-   border: none;
-   background: none;
-   color: green;
-   cursor: pointer;
-   position: absolute;
-   top: 10px;
-   left: 10px;
+   /* border: none; */
+   /* background: none; */
+   /* color: green; */
+   /* cursor: pointer; */
+   /* position: absolute; */
+   /* top: 10px; */
+   /* left: 10px; */
  }
  
  .modal {
@@ -574,3 +579,8 @@ article img {
    margin-top: 1.5rem;
    width: 100%;
  }
+
+ html {
+   visibility: visible;
+   opacity: 1;
+}
