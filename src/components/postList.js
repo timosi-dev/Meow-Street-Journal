@@ -37,6 +37,7 @@ class PostList{
             post._id !== postId
          });
          this.getPosts;
+         window.location.reload();
       }
       catch (error) {
          alert('You can not delete this resource')
